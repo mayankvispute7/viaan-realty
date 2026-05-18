@@ -66,7 +66,8 @@ export default function LocationShowcase() {
               <div className="w-12 h-[1px] bg-[#C7A26A]"></div>
               <span className="text-[#C7A26A] tracking-[0.3em] uppercase text-xs font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>Strategic Geography</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight" style={{ fontFamily: "'Cinzel Decorative', serif" }}>
+            {/* UPDATED FONT: Changed to Playfair Display */}
+            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
               Location <br /> We Operate
             </h2>
           </div>
@@ -93,7 +94,7 @@ export default function LocationShowcase() {
         >
           {[...locationsData, ...locationsData].map((loc, index) => (
             <Link 
-              href="/coming-soon"
+              href="/#contact" // UPDATED ROUTE: Goes to contact section instead of coming-soon
               key={index}
               className="block w-[300px] md:w-[360px] h-[500px] shrink-0 relative rounded-2xl overflow-hidden bg-[#0a0a0a] group shadow-2xl border border-white/10 transition-transform duration-500 ease-out hover:scale-110 hover:-translate-y-4 hover:z-50 hover:shadow-[0_30px_60px_rgba(199,162,106,0.15)]"
             >

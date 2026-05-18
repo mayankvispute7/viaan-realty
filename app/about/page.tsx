@@ -37,20 +37,18 @@ export default function AboutPage() {
           <Image src="/images/about-hero.jpg" alt="VIAAN Realty Luxury" fill sizes="100vw" className="object-cover" priority />
         </div>
         
-        {/* Base dark cinematic overlay */}
         <div className="absolute inset-0 z-10 bg-black/60"></div>
-        
-        {/* NEW: Premium Golden Studio Light from Left */}
         <div className="absolute inset-y-0 left-0 w-[40%] bg-gradient-to-r from-[#C7A26A]/40 via-[#C7A26A]/10 to-transparent mix-blend-color-dodge z-10 pointer-events-none"></div>
-        
-        {/* NEW: Premium Golden Studio Light from Right */}
         <div className="absolute inset-y-0 right-0 w-[40%] bg-gradient-to-l from-[#C7A26A]/40 via-[#C7A26A]/10 to-transparent mix-blend-color-dodge z-10 pointer-events-none"></div>
         
         <div className="relative z-20 text-center px-6 mt-20 max-w-4xl mx-auto flex flex-col items-center">
           <span className="animate-element text-white/80 tracking-[0.4em] uppercase text-xs md:text-sm font-bold mb-6 block" style={{ fontFamily: "'Montserrat', sans-serif" }}>About VIAAN Realty</span>
-          <h1 className="animate-element text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 drop-shadow-xl" style={{ fontFamily: "'Cinzel Decorative', serif" }}>
-            Where Dreams <br/> <span className="font-light italic" style={{ fontFamily: "'Playfair Display', serif" }}>Meet Reality</span>
+          
+          {/* FONT UPDATED: Montserrat & Playfair Display */}
+          <h1 className="animate-element text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 drop-shadow-xl uppercase tracking-widest" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+            Where Dreams <br/> <span className="font-light italic tracking-normal normal-case" style={{ fontFamily: "'Playfair Display', serif" }}>Meet Reality</span>
           </h1>
+          
           <p className="animate-element text-white/90 text-sm md:text-lg max-w-2xl font-light tracking-wide leading-relaxed drop-shadow-md" style={{ fontFamily: "'Inter', sans-serif" }}>
             Delivering trusted real-estate solutions with professionalism, transparency, and customer-first commitment.
           </p>
@@ -85,12 +83,14 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="animate-element bg-white border border-black/5 p-10 md:p-16 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-500 relative overflow-hidden group">
             <Eye size={40} className="text-[#1A1A1A] mb-8 transition-transform duration-500 group-hover:scale-110" />
-            <h3 className="text-3xl font-bold text-[#1A1A1A] mb-6" style={{ fontFamily: "'Cinzel Decorative', serif" }}>Our Vision</h3>
+            {/* FONT UPDATED: Playfair Display */}
+            <h3 className="text-3xl font-bold text-[#1A1A1A] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>Our Vision</h3>
             <p className="text-[#1A1A1A] font-light leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>To redefine the luxury real estate landscape in Pune by setting the highest standards of architectural excellence, absolute transparency, and bespoke lifestyle curation.</p>
           </div>
           <div className="animate-element bg-white border border-black/5 p-10 md:p-16 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-500 relative overflow-hidden group">
             <Target size={40} className="text-[#1A1A1A] mb-8 transition-transform duration-500 group-hover:scale-110" />
-            <h3 className="text-3xl font-bold text-[#1A1A1A] mb-6" style={{ fontFamily: "'Cinzel Decorative', serif" }}>Our Mission</h3>
+            {/* FONT UPDATED: Playfair Display */}
+            <h3 className="text-3xl font-bold text-[#1A1A1A] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>Our Mission</h3>
             <p className="text-[#1A1A1A] font-light leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>To meticulously match extraordinary individuals with extraordinary properties, ensuring every transaction is governed by unyielding integrity, discretion, and a commitment to protecting our clients' legacies.</p>
           </div>
         </div>
@@ -99,7 +99,8 @@ export default function AboutPage() {
       {/* 4. WHY CHOOSE VIAAN REALTY */}
       <section className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-element">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4" style={{ fontFamily: "'Cinzel Decorative', serif" }}>The VIAAN Standard</h2>
+          {/* FONT UPDATED: Playfair Display */}
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>The VIAAN Standard</h2>
           <p className="text-[#1A1A1A] tracking-[0.2em] uppercase text-xs font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>Why Choose Us</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -122,44 +123,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. TEAM MEMBERS */}
-      <section className="py-24 px-6 md:px-12 bg-[#050505] text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col items-center text-center mb-20 animate-element">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: "'Cinzel Decorative', serif" }}>Executive Team</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              { img: "/images/shubhankar.jpg", name: "Shubhankar Sawant", role: "Founder", quote: "Real estate is about securing your legacy." },
-              { img: "default", name: "Executive Member", role: "Head of Acquisitions", quote: "We curate homes, not just properties." },
-              { img: "default", name: "Executive Member", role: "Chief Negotiator", quote: "Value is created at the negotiation table." }
-            ].map((member, i) => (
-              <div key={i} className="animate-element group relative rounded-2xl overflow-hidden bg-[#111111] border border-white/5 flex flex-col">
-                <div className="relative h-80 w-full overflow-hidden flex items-center justify-center bg-[#1A1A1A]">
-                  {member.img === "default" ? (
-                    <div className="text-white/20 group-hover:text-white/40 transition-colors duration-500">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>
-                    </div>
-                  ) : (
-                    <Image src={member.img} alt={member.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500"></div>
-                </div>
-                <div className="p-8 absolute bottom-0 w-full">
-                  <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>{member.name}</h3>
-                  <p className="text-white/70 text-xs uppercase tracking-widest font-semibold mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>{member.role}</p>
-                  <p className="text-white/50 text-sm font-light italic" style={{ fontFamily: "'Inter', sans-serif" }}>"{member.quote}"</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. BRANDS WE COLLABORATE WITH */}
+      {/* 5. BRANDS WE COLLABORATE WITH */}
       <PartnerBrands />
 
-      {/* 7. OFFICE LOCATION & CONTACT INFO */}
+      {/* 6. OFFICE LOCATION & CONTACT INFO */}
       <div className="animate-element bg-[#F7F3EE]">
         <OfficeLocationSection />
       </div>
