@@ -79,8 +79,12 @@ export default function HeroIntro() {
 
     const initializeAnimations = () => {
       ctx.add(() => {
+        
+        // ==========================================
+        // 1. SCROLL TIMELINE (Background Only)
+        // ==========================================
         const playhead = { frame: 1 };
-        const masterTl = gsap.timeline({
+        const scrollTl = gsap.timeline({
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
@@ -90,7 +94,7 @@ export default function HeroIntro() {
           }
         });
 
-        masterTl.to(playhead, {
+        scrollTl.to(playhead, {
           frame: frameCount,
           snap: "frame",
           ease: "none",
@@ -98,36 +102,48 @@ export default function HeroIntro() {
           onUpdate: () => renderFrame(playhead.frame),
         }, 0); 
 
-        masterTl.fromTo(
+        // Hide scroll indicator as they scroll down
+        scrollTl.to(".scroll-indicator", { opacity: 0, duration: 5 }, 2);
+
+
+        // ==========================================
+        // 2. AUTO-PLAY INTRO TIMELINE (Text & UI)
+        // Completely independent of the scroll!
+        // ==========================================
+        const introTl = gsap.timeline();
+
+        // 1st: VIAAN REALTY slides in and unblurs
+        introTl.fromTo(
           ".title-reveal",
           { clipPath: "inset(-20% 100% -20% -10%)", filter: "blur(12px)", scale: 1.05 },
-          { clipPath: "inset(-20% -10% -20% -10%)", filter: "blur(0px)", scale: 1, duration: 25, ease: "power2.inOut" },
-          45 
-        );
-
-        masterTl.fromTo(
+          { clipPath: "inset(-20% -10% -20% -10%)", filter: "blur(0px)", scale: 1, duration: 1.8, ease: "power3.inOut" }
+        )
+        // 2nd: Tagline characters fade in
+        .fromTo(
           ".char-tagline", 
           { opacity: 0, y: 15, filter: "blur(8px)" }, 
-          { opacity: 1, y: 0, filter: "blur(0px)", stagger: 0.05, duration: 10, ease: "power1.out" },
-          65 
-        );
-
-        masterTl.fromTo(
+          { opacity: 1, y: 0, filter: "blur(0px)", stagger: 0.04, duration: 1, ease: "power2.out" },
+          "+=0.3" // Waits a moment after the title
+        )
+        // 3rd: "Looking for..." fades in
+        .fromTo(
           ".animated-sentence-static", 
           { opacity: 0, y: 20, filter: "blur(6px)" }, 
-          { opacity: 1, y: 0, filter: "blur(0px)", duration: 10, ease: "power2.out" },
-          75 
-        );
-
-        masterTl.fromTo(
+          { opacity: 1, y: 0, filter: "blur(0px)", duration: 1, ease: "power2.out" },
+          "+=0.4" // Waits a moment after the tagline
+        )
+        // 4th: The massive search widget fades in
+        .fromTo(
           ".search-widget",
           { opacity: 0, y: 30, filter: "blur(8px)" },
-          { opacity: 1, y: 0, filter: "blur(0px)", duration: 12, ease: "power2.out" },
-          85
+          { opacity: 1, y: 0, filter: "blur(0px)", duration: 1.2, ease: "power2.out" },
+          "+=0.4" // Waits a moment after the looking for sentence
         );
 
-        masterTl.to(".scroll-indicator", { opacity: 0, duration: 5 }, 2);
 
+        // ==========================================
+        // 3. PROPERTY LOOP ANIMATION
+        // ==========================================
         if (propertyLoopRef.current) {
           const propertyItems = propertyLoopRef.current.querySelectorAll('.dynamic-property');
           if(propertyItems.length >= 2) {
@@ -193,7 +209,6 @@ export default function HeroIntro() {
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 pt-10 flex flex-col items-center justify-center text-center mt-[-4vh]">
           
-          {/* FIXED: VIAAN REALTY is now one unified string to ensure identical bolding and size */}
           <h1 className="title-reveal glass-sweep-hover text-5xl md:text-[6rem] leading-none text-white tracking-wider pb-2 pr-4 cursor-default font-bold uppercase" style={{ fontFamily: "'Cinzel Decorative', serif" }}>
             VIAAN REALTY
           </h1>

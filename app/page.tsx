@@ -2,7 +2,6 @@ import React from "react";
 import HeroIntro from "@/components/sections/HeroIntro";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import LocationShowcase from "@/components/sections/LocationShowcase";
-import ContactSection from "@/components/sections/ContactSection";
 import PartnerBrands from "@/components/sections/PartnerBrands";
 
 export default function Home() {
@@ -17,9 +16,6 @@ export default function Home() {
 
       {/* 3. Locations Showcase Slider (Dark Background) */}
       <LocationShowcase />
-
-      {/* 4. Quick Homepage Contact Section (Cream Background) */}
-      <ContactSection />
       
       {/* 5. Collaboration Brands Marquee (Cream/White Background) */}
       <PartnerBrands />
