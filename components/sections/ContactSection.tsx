@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Mail, MessageCircle } from "lucide-react";
-import OfficeLocationSection from "./OfficeLocationSection";
+// DELETED: OfficeLocationSection import
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -110,7 +110,7 @@ export default function ContactSection() {
       </section>
 
       {/* PART 2: CREAM SOCIALS (CENTERED LAYOUT) */}
-      <section className="relative py-24 px-6 md:px-12 border-b border-black/5 flex flex-col items-center text-center">
+      <section className="relative py-24 px-6 md:px-12 pb-32 flex flex-col items-center text-center">
         
         <div className="max-w-[1000px] mx-auto relative z-10 contact-anim flex flex-col items-center">
           
@@ -153,10 +153,8 @@ export default function ContactSection() {
         </div>
       </section>
 
-      {/* PART 3: MAP (WRAPPED IN BLACK THEME) */}
-      <div className="contact-anim bg-[#050505] w-full border-t border-[#C7A26A]/20">
-        <OfficeLocationSection />
-      </div>
+      {/* DELETED PART 3: MAP / OFFICE LOCATION SECTION ENTIRELY */}
+      
     </div>
   );
 }

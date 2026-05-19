@@ -40,19 +40,20 @@ export default function PartnerBrands() {
   }, []);
 
   // Split partners into two arrays for the two rows
-  const topRow = partners.slice(0, 6);
-  const bottomRow = partners.slice(6);
+  const rowOneItems = partners.slice(0, 6);
+  const rowTwoItems = partners.slice(6);
 
   return (
     <section ref={sectionRef} className="py-24 px-6 bg-[#F7F3EE] overflow-hidden border-t border-black/5">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
         <div className="text-center mb-16 partner-animate">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-4" style={{ fontFamily: "'Cinzel Decorative', serif" }}>
-            Trusted Collaboration Partners
+          {/* UPDATED FONT: Playfair Display */}
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+            Our Trusted <span className="italic font-light">Partners</span>
           </h2>
-          <p className="text-[#1A1A1A] tracking-[0.2em] uppercase text-xs font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-            Building Strong Industry Relationships
+          <p className="text-gray-600 font-light text-sm max-w-md mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>
+            Collaborating with industry-leading developers to bring you the finest estates in Pune.
           </p>
         </div>
 
@@ -80,12 +81,11 @@ export default function PartnerBrands() {
 
         <div className="marquee-wrapper partner-animate">
           
-          {/* Row 1: Scrolling Left */}
+          {/* ROW 1: (Formerly Bottom Row) Scrolling Right */}
           <div className="marquee-container">
-            {/* Render twice for seamless infinite loop */}
             {[1, 2].map((iteration) => (
-              <div key={iteration} className="marquee-content" aria-hidden={iteration === 2}>
-                {topRow.map((partner) => (
+              <div key={iteration} className="marquee-content reverse" aria-hidden={iteration === 2}>
+                {rowTwoItems.map((partner) => (
                   <div key={`${iteration}-${partner.id}`} className="relative w-32 h-20 md:w-40 md:h-24 shrink-0 transition-transform duration-300 hover:scale-105 cursor-pointer shine-effect bg-white border border-black/5 p-4 flex items-center justify-center">
                     <Image src={partner.src} alt={`Partner ${partner.id}`} fill className="object-contain p-2" sizes="160px" />
                   </div>
@@ -94,11 +94,12 @@ export default function PartnerBrands() {
             ))}
           </div>
 
-          {/* Row 2: Scrolling Right (Reverse) */}
+          {/* ROW 2: (Formerly Top Row) Scrolling Left */}
           <div className="marquee-container">
+            {/* Render twice for seamless infinite loop */}
             {[1, 2].map((iteration) => (
-              <div key={iteration} className="marquee-content reverse" aria-hidden={iteration === 2}>
-                {bottomRow.map((partner) => (
+              <div key={iteration} className="marquee-content" aria-hidden={iteration === 2}>
+                {rowOneItems.map((partner) => (
                   <div key={`${iteration}-${partner.id}`} className="relative w-32 h-20 md:w-40 md:h-24 shrink-0 transition-transform duration-300 hover:scale-105 cursor-pointer shine-effect bg-white border border-black/5 p-4 flex items-center justify-center">
                     <Image src={partner.src} alt={`Partner ${partner.id}`} fill className="object-contain p-2" sizes="160px" />
                   </div>
