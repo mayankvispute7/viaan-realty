@@ -93,8 +93,9 @@ export default function FeaturesSection() {
             </span>
             <div className="w-12 h-[1px] bg-[#C7A26A]"></div>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1A1A]" style={{ fontFamily: "'Cinzel Decorative', serif" }}>
-            Why Choose Us
+          {/* CHANGED TO MONTSERRAT & UPPERCASE */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1A1A] uppercase tracking-widest" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+            WHY CHOOSE US
           </h2>
         </div>
 
@@ -116,7 +117,8 @@ export default function FeaturesSection() {
                 </div>
               </div>
 
-              <h3 className="text-xl font-bold text-[#1A1A1A] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+              {/* CHANGED TO MONTSERRAT & UPPERCASE */}
+              <h3 className="text-xl font-bold text-[#1A1A1A] mb-4 uppercase tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 {feature.title}
               </h3>
               

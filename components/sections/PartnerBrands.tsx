@@ -6,7 +6,6 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Mapped exactly to your screenshot's file types
 const partners = [
   { id: 1, src: "/companylogo/logo1.png" },
   { id: 2, src: "/companylogo/logo2.jpeg" }, 
@@ -39,7 +38,6 @@ export default function PartnerBrands() {
     return () => ctx.revert();
   }, []);
 
-  // Split partners into two arrays for the two rows
   const rowOneItems = partners.slice(0, 6);
   const rowTwoItems = partners.slice(6);
 
@@ -48,16 +46,15 @@ export default function PartnerBrands() {
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
         <div className="text-center mb-16 partner-animate">
-          {/* UPDATED FONT: Playfair Display */}
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Our Trusted <span className="italic font-light">Partners</span>
+          {/* CHANGED TO MONTSERRAT */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4 uppercase tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+            Our Trusted Partners
           </h2>
-          <p className="text-gray-600 font-light text-sm max-w-md mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Collaborating with industry-leading developers to bring you the finest estates in Pune.
+          <p className="text-gray-600 font-light text-sm max-w-md mx-auto uppercase tracking-widest mt-4" style={{ fontFamily: "'Inter', sans-serif" }}>
+            Collaborating with industry leaders
           </p>
         </div>
 
-        {/* Custom CSS for 2-way marquee and Shine Effect */}
         <style dangerouslySetInnerHTML={{__html: `
           .marquee-wrapper { display: flex; flex-direction: column; gap: 2rem; width: 100%; overflow: hidden; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
           .marquee-container { display: flex; width: max-content; gap: 4rem; }
@@ -69,7 +66,6 @@ export default function PartnerBrands() {
           @keyframes scroll-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
           @keyframes scroll-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
-          /* Premium Luxury Shine Hover Effect */
           .shine-effect { position: relative; overflow: hidden; border-radius: 12px; }
           .shine-effect::after {
             content: ''; position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
@@ -80,8 +76,6 @@ export default function PartnerBrands() {
         `}} />
 
         <div className="marquee-wrapper partner-animate">
-          
-          {/* ROW 1: (Formerly Bottom Row) Scrolling Right */}
           <div className="marquee-container">
             {[1, 2].map((iteration) => (
               <div key={iteration} className="marquee-content reverse" aria-hidden={iteration === 2}>
@@ -94,9 +88,7 @@ export default function PartnerBrands() {
             ))}
           </div>
 
-          {/* ROW 2: (Formerly Top Row) Scrolling Left */}
           <div className="marquee-container">
-            {/* Render twice for seamless infinite loop */}
             {[1, 2].map((iteration) => (
               <div key={iteration} className="marquee-content" aria-hidden={iteration === 2}>
                 {rowOneItems.map((partner) => (
@@ -107,7 +99,6 @@ export default function PartnerBrands() {
               </div>
             ))}
           </div>
-
         </div>
 
       </div>

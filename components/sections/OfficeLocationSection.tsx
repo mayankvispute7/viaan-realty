@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
-// FIXED: Removed Instagram from the import list
 import { MapPin, Phone, Mail, BadgeCheck, MessageCircle } from "lucide-react";
 
-// ADDED: The custom Instagram SVG to fix the build error
 const InstagramIcon = ({ size = 24, strokeWidth = 2, className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}>
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -22,17 +20,17 @@ export default function OfficeLocationSection() {
           <span className="text-[#C7A26A] tracking-[0.3em] uppercase text-xs font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>Headquarters</span>
         </div>
         
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12" style={{ fontFamily: "'Playfair Display', serif" }}>
-          Visit Our Office
+        {/* CHANGED TO MONTSERRAT */}
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 uppercase tracking-widest" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          VISIT OUR OFFICE
         </h2>
 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch">
-          
-          {/* Left Side: Office Details Card */}
           <div className="w-full lg:w-5/12 bg-[#F7F3EE] p-8 md:p-12 rounded-3xl flex flex-col justify-center">
             
-            <h3 className="text-3xl font-bold text-[#1A1A1A] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
-              VIAAN Realty
+            {/* CHANGED TO MONTSERRAT */}
+            <h3 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-6 uppercase tracking-widest" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              VIAAN REALTY
             </h3>
             
             <div className="inline-flex items-center gap-3 bg-black/5 border border-black/10 px-4 py-2 rounded-full mb-10 w-max">
@@ -82,14 +80,11 @@ export default function OfficeLocationSection() {
                 <span className="text-xs font-bold tracking-[0.2em] uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>WhatsApp Us</span>
               </a>
               <a href="https://instagram.com/viaanrealty" target="_blank" rel="noreferrer" className="w-14 h-14 bg-black/5 hover:bg-[#E1306C] hover:text-white rounded-xl flex items-center justify-center transition-colors duration-300 text-[#1A1A1A]">
-                {/* FIXED: Using the custom SVG icon here */}
                 <InstagramIcon size={20} /> 
               </a>
             </div>
-
           </div>
 
-          {/* Right Side: Map */}
           <div className="w-full lg:w-7/12 h-[400px] lg:h-auto min-h-[450px] rounded-3xl overflow-hidden border border-white/10 relative shadow-2xl">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.332306899435!2d73.7495039760432!3d18.604118882505517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bb005080b0bb%3A0x6b453965554f6764!2sVardhaman%20Moonstone!5e0!3m2!1sen!2sin!4v1716281781293!5m2!1sen!2sin" 
@@ -100,9 +95,7 @@ export default function OfficeLocationSection() {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          
         </div>
-
       </div>
     </section>
   );

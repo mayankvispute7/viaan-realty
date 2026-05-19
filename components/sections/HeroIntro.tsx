@@ -70,31 +70,27 @@ export default function HeroIntro() {
     const initializeAnimations = () => {
       ctx.add(() => {
         
-        // 1. AUTO-PLAY BACKGROUND LOOP (NOW WITH SCROLL PAUSE)
         const playhead = { frame: 1 };
         
-        // We create the tween...
         const bgAnimation = gsap.to(playhead, {
           frame: frameCount,
           snap: "frame",
           ease: "none",
-          duration: 5, // 5 seconds per loop
-          repeat: -1, // Infinite loop
+          duration: 5, 
+          repeat: -1, 
           onUpdate: () => renderFrame(playhead.frame),
         });
 
-        // ...and attach it to a ScrollTrigger to PAUSE when off-screen!
         ScrollTrigger.create({
           trigger: containerRef.current,
-          start: "top bottom", // Starts when top of hero hits bottom of screen
-          end: "bottom top",   // Ends when bottom of hero hits top of screen
+          start: "top bottom", 
+          end: "bottom top",   
           onEnter: () => bgAnimation.play(),
           onLeave: () => bgAnimation.pause(),
           onEnterBack: () => bgAnimation.play(),
           onLeaveBack: () => bgAnimation.pause(),
         });
 
-        // 2. TEXT ENTRANCE ANIMATIONS
         const introTl = gsap.timeline();
         introTl.fromTo(".title-reveal",
           { clipPath: "inset(-20% 100% -20% -10%)", filter: "blur(12px)", scale: 1.05 },
@@ -116,7 +112,6 @@ export default function HeroIntro() {
           "+=0.2"
         );
 
-        // 3. TEXT LOOP
         if (propertyLoopRef.current) {
           const propertyItems = propertyLoopRef.current.querySelectorAll('.dynamic-property');
           if(propertyItems.length >= 2) {
@@ -163,7 +158,12 @@ export default function HeroIntro() {
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 pt-10 flex flex-col items-center justify-center text-center mt-[-4vh]">
           
-          <h1 className="title-reveal text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] leading-none text-white tracking-widest pb-2 cursor-default font-bold uppercase w-full" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          {/* CHANGED: 
+            1. Font family is back to 'Montserrat'.
+            2. Added 'uppercase' and 'tracking-[0.2em]' (letter spacing) back for that premium luxury look.
+            3. Changed text to ALL CAPS.
+          */}
+          <h1 className="title-reveal text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] leading-none text-white pb-2 cursor-default font-bold uppercase tracking-[0.2em] w-full drop-shadow-md" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             VIAAN REALTY
           </h1>
           
