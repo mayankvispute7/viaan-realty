@@ -30,7 +30,6 @@ export default function AboutPage() {
   return (
     <main ref={mainRef} className="bg-[#F7F3EE] min-h-screen overflow-hidden">
       
-      {/* 1. ABOUT HERO */}
       <section className="hero-section relative h-screen w-full flex items-center justify-center overflow-hidden bg-[#050505]">
         <div className="absolute inset-0 z-0 hero-parallax scale-110">
           <Image src="/images/about-hero.jpg" alt="VIAAN Realty Luxury" fill sizes="100vw" className="object-cover" priority />
@@ -41,19 +40,15 @@ export default function AboutPage() {
         
         <div className="relative z-20 text-center px-6 mt-20 max-w-4xl mx-auto flex flex-col items-center">
           <span className="animate-element text-white/80 tracking-[0.4em] uppercase text-xs md:text-sm font-bold mb-6 block" style={{ fontFamily: "'Montserrat', sans-serif" }}>About VIAAN Realty</span>
-          
-          {/* UPDATED TO MONTSERRAT */}
           <h1 className="animate-element text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-xl uppercase tracking-[0.1em] leading-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             WHERE DREAMS <br/> MEET REALITY
           </h1>
-          
           <p className="animate-element text-white/90 text-sm md:text-lg max-w-2xl font-light tracking-wide leading-relaxed drop-shadow-md" style={{ fontFamily: "'Inter', sans-serif" }}>
             Delivering trusted real-estate solutions with professionalism, transparency, and customer-first commitment.
           </p>
         </div>
       </section>
 
-      {/* 2. COMPANY INTRODUCTION */}
       <section className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="w-full lg:w-1/2 flex flex-col items-start">
@@ -61,12 +56,9 @@ export default function AboutPage() {
               <div className="w-12 h-[1px] bg-[#1A1A1A]"></div>
               <span className="text-[#1A1A1A] tracking-[0.3em] uppercase text-xs font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>Our Story</span>
             </div>
-            
-            {/* UPDATED TO MONTSERRAT */}
             <h2 className="animate-element text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-8 leading-tight uppercase tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               A LEGACY OF TRUST & EXCELLENCE
             </h2>
-            
             <div className="animate-element space-y-6 text-[#1A1A1A] font-light leading-relaxed text-base md:text-lg" style={{ fontFamily: "'Inter', sans-serif" }}>
               <p>VIAAN Realty is a dynamic real estate company committed to delivering exceptional property solutions with <span className="font-semibold">honesty, professionalism, and a customer-first approach.</span></p>
               <p>With deep market understanding and <span className="font-semibold">strong negotiation expertise</span>, the company ensures that every client receives the best possible value and a smooth property-buying experience.</p>
@@ -79,35 +71,30 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. OUR VISION & MISSION */}
       <section className="py-20 px-6 md:px-12 border-y border-black/5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="animate-element bg-white border border-black/5 p-10 md:p-16 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-500 relative overflow-hidden group">
             <Eye size={40} className="text-[#1A1A1A] mb-8 transition-transform duration-500 group-hover:scale-110" />
-            {/* UPDATED TO MONTSERRAT */}
             <h3 className="text-3xl font-bold text-[#1A1A1A] mb-6 uppercase tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>OUR VISION</h3>
             <p className="text-[#1A1A1A] font-light leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>To redefine the luxury real estate landscape in Pune by setting the highest standards of architectural excellence, absolute transparency, and bespoke lifestyle curation.</p>
           </div>
           <div className="animate-element bg-white border border-black/5 p-10 md:p-16 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-500 relative overflow-hidden group">
             <Target size={40} className="text-[#1A1A1A] mb-8 transition-transform duration-500 group-hover:scale-110" />
-            {/* UPDATED TO MONTSERRAT */}
             <h3 className="text-3xl font-bold text-[#1A1A1A] mb-6 uppercase tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>OUR MISSION</h3>
             <p className="text-[#1A1A1A] font-light leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>To meticulously match extraordinary individuals with extraordinary properties, ensuring every transaction is governed by unyielding integrity, discretion, and a commitment to protecting our clients' legacies.</p>
           </div>
         </div>
       </section>
 
-      {/* 4. WHY CHOOSE VIAAN REALTY */}
       <section className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-element">
-          {/* UPDATED TO MONTSERRAT */}
           <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4 uppercase tracking-widest" style={{ fontFamily: "'Montserrat', sans-serif" }}>THE VIAAN STANDARD</h2>
           <p className="text-[#1A1A1A] tracking-[0.2em] uppercase text-xs font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>Why Choose Us</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { icon: ShieldCheck, title: "Trusted Guidance", desc: "Honest, data-driven advice at every step of your investment." },
-            { icon: Scale, title: "Strong Negotiation", desc: "Leveraging market authority to secure your asset at the best price." },
+            { icon: Scale, title: "Direct-to-Developer Advantage", desc: "Skip the chaos of pushy brokers, endless calls, and hidden fees. We connect you directly with top developers, eliminating stressful middlemen entirely. Enjoy a transparent, relief-filled buying experience with zero brokerage, official builder inventory, and the absolute lowest market prices. Your dream home, straight from the source." },
             { icon: BadgeCheck, title: "Verified Properties", desc: "Every estate undergoes rigorous legal and architectural vetting." },
             { icon: Users, title: "Customer-First Approach", desc: "Your unique requirements dictate our entire curation process." },
             { icon: FileSearch, title: "Transparent Process", desc: "Zero hidden costs, zero brokerage, absolute clarity." },
@@ -117,7 +104,6 @@ export default function AboutPage() {
               <div className="w-12 h-12 bg-[#F7F3EE] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#1A1A1A] transition-colors duration-500">
                 <feature.icon size={20} className="text-[#1A1A1A] group-hover:text-white transition-colors duration-500" />
               </div>
-              {/* UPDATED TO MONTSERRAT */}
               <h3 className="text-xl font-bold text-[#1A1A1A] mb-3 uppercase tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>{feature.title}</h3>
               <p className="text-[#1A1A1A] text-sm font-light leading-relaxed opacity-80" style={{ fontFamily: "'Inter', sans-serif" }}>{feature.desc}</p>
             </div>
@@ -125,14 +111,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. BRANDS WE COLLABORATE WITH */}
       <PartnerBrands />
-
-      {/* 6. OFFICE LOCATION & CONTACT INFO */}
       <div className="animate-element bg-[#050505]">
         <OfficeLocationSection />
       </div>
-
     </main>
   );
 }

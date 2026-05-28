@@ -2,14 +2,6 @@
 import React from "react";
 import { MapPin, Phone, Mail, BadgeCheck, MessageCircle } from "lucide-react";
 
-const InstagramIcon = ({ size = 24, strokeWidth = 2, className = "" }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-  </svg>
-);
-
 export default function OfficeLocationSection() {
   return (
     <section className="bg-[#050505] py-24 px-6 md:px-12">
@@ -20,7 +12,6 @@ export default function OfficeLocationSection() {
           <span className="text-[#C7A26A] tracking-[0.3em] uppercase text-xs font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>Headquarters</span>
         </div>
         
-        {/* CHANGED TO MONTSERRAT */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 uppercase tracking-widest" style={{ fontFamily: "'Montserrat', sans-serif" }}>
           VISIT OUR OFFICE
         </h2>
@@ -28,7 +19,6 @@ export default function OfficeLocationSection() {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch">
           <div className="w-full lg:w-5/12 bg-[#F7F3EE] p-8 md:p-12 rounded-3xl flex flex-col justify-center">
             
-            {/* CHANGED TO MONTSERRAT */}
             <h3 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-6 uppercase tracking-widest" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               VIAAN REALTY
             </h3>
@@ -74,13 +64,11 @@ export default function OfficeLocationSection() {
               </div>
             </div>
 
+            {/* INSTAGRAM REMOVED FROM HERE, FULL WIDTH WHATSAPP NOW */}
             <div className="flex items-center gap-4">
               <a href="https://wa.me/919890548878" target="_blank" rel="noreferrer" className="flex-1 bg-[#1A1A1A] hover:bg-[#25D366] text-white py-4 rounded-xl flex items-center justify-center gap-2 transition-colors duration-300">
                 <MessageCircle size={18} />
                 <span className="text-xs font-bold tracking-[0.2em] uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>WhatsApp Us</span>
-              </a>
-              <a href="https://instagram.com/viaanrealty" target="_blank" rel="noreferrer" className="w-14 h-14 bg-black/5 hover:bg-[#E1306C] hover:text-white rounded-xl flex items-center justify-center transition-colors duration-300 text-[#1A1A1A]">
-                <InstagramIcon size={20} /> 
               </a>
             </div>
           </div>

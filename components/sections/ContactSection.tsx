@@ -6,14 +6,6 @@ import { ArrowRight, Mail, MessageCircle } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const InstagramIcon = ({ size = 24, strokeWidth = 2, className = "" }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-  </svg>
-);
-
 export default function ContactSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -51,7 +43,6 @@ export default function ContactSection() {
               <span className="text-[#C7A26A] tracking-[0.4em] uppercase text-[10px] font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>Inquire Now</span>
             </div>
             
-            {/* CHANGED TO MONTSERRAT */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1A1A] leading-[1.2] mb-2 uppercase tracking-widest" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               LET'S FIND <br className="hidden lg:block"/> YOUR
             </h1>
@@ -107,7 +98,6 @@ export default function ContactSection() {
       <section className="relative py-24 px-6 md:px-12 pb-32 flex flex-col items-center text-center">
         <div className="max-w-[1000px] mx-auto relative z-10 contact-anim flex flex-col items-center">
           
-          {/* CHANGED TO MONTSERRAT */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4 uppercase tracking-widest" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             CONNECT WITH US
           </h2>
@@ -127,12 +117,6 @@ export default function ContactSection() {
                 <div className="social-3d-loop"><Mail size={26} strokeWidth={1.5} /></div>
               </div>
               <p className="text-[#1A1A1A] font-semibold tracking-wider text-sm uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>Email</p>
-            </a>
-            <a href="https://instagram.com/viaanrealty" target="_blank" rel="noreferrer" className="social-group flex flex-col items-center gap-4 cursor-pointer">
-              <div className="w-16 h-16 rounded-full border border-black/10 bg-white shadow-sm flex items-center justify-center text-[#E1306C] hover:border-[#E1306C] transition-all duration-500">
-                <div className="social-3d-loop"><InstagramIcon size={26} strokeWidth={1.5} /></div>
-              </div>
-              <p className="text-[#1A1A1A] font-semibold tracking-widest text-sm uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>Instagram</p>
             </a>
           </div>
         </div>
